@@ -1,5 +1,6 @@
 import { MODULE_BY_KEY } from '@/data/modules'
 import { allRows, listRows, resetRows, saveRows } from '@/data/local-store'
+import { hardResetValidation } from '@/api/ingest-validation'
 import type { ActionResult, EntryRow, ModuleMeta, OverviewResult, PageResult } from '@/data/types'
 
 // 会写进数据的「往回走」动作：命中就把这条记录标成异常态，看板上能一眼看出来。
@@ -58,6 +59,11 @@ export function runAction(key: string, id: number, action: string): ActionResult
 
 export function resetModule(key: string): PageResult {
   resetRows(key)
+  // 接入通道 / 原始表清单回到示例数据时，校验链基线也要同步清空，
+  // 下次读取会按新清单幂等重建，避免残留的版本与表编号错配。
+  if (key === 'ingest' || key === 'bronze') {
+    hardResetValidation()
+  }
   return listEntries(key)
 }
 

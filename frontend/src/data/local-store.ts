@@ -57,3 +57,8 @@ export function resetRows(key: string): EntryRow[] {
 export function storageKey(): string {
   return STORAGE_KEY
 }
+
+/** 测试辅助：清掉模块内缓存，下一次读取重新从 localStorage 播种。 */
+export function __resetStoreCacheForTest(): void {
+  cache = null
+}

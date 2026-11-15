@@ -35,3 +35,38 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .error-text { color: #b42318; }
 .status-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 10px; font-size: 12px; color: var(--muted); }
 .legend-item { background: #eef2f7; border-radius: 999px; padding: 2px 10px; }
+
+/* 接入校验链：批次状态、编辑面板与时间线 */
+.info-banner { border-radius: 8px; padding: 8px 12px; font-size: 13px; margin: 8px 0; }
+.info-banner.success { background: #ecfdf3; border: 1px solid #a6f4c5; color: #027a48; }
+.info-banner.error { background: #fef3f2; border: 1px solid #fda29b; color: #b42318; }
+.run-tag { display: inline-block; margin-left: 6px; border-radius: 999px; padding: 1px 8px; font-size: 12px; }
+.run-tag.success { background: #ecfdf3; color: #027a48; }
+.run-tag.running { background: #eff8ff; color: #175cd3; }
+.run-tag.interrupted, .run-tag.failed { background: #fef3f2; color: #b42318; }
+.row-blocked { background: #fffaeb; }
+.row-pending { background: #fef6ee; }
+.edit-row td, .chain-row td { background: #fbfcfe; padding: 12px; }
+.edit-panel h4, .chain-panel h4, .chain-panel h5 { margin: 4px 0 8px; font-size: 13px; }
+.edit-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.edit-field { flex: 1 1 280px; }
+.edit-field span { display: block; font-size: 12px; color: var(--muted); }
+.edit-field input { width: 100%; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; }
+.inline-check { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.preview-text { font-size: 12px; background: #eff8ff; border: 1px solid #b2ddff; border-radius: 6px; padding: 8px 10px; }
+.edit-actions { display: flex; gap: 8px; margin-top: 8px; }
+.chain-panel { display: flex; flex-direction: column; gap: 8px; }
+.chain-head { display: flex; justify-content: space-between; align-items: center; }
+.run-meta { font-size: 12px; color: var(--muted); margin: 0; }
+.step-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 8px 0; }
+.step { flex: 1 1 160px; border: 1px solid var(--border); border-radius: 8px; padding: 8px; background: #fff; font-size: 12px; }
+.step strong { display: block; margin-bottom: 4px; }
+.step.success { border-color: #a6f4c5; }
+.step.failed { border-color: #fda29b; background: #fef3f2; }
+.step.skipped { opacity: 0.65; }
+.resume-hint { font-size: 12px; color: var(--muted); margin: 0; }
+.sub-table { width: 100%; border-collapse: collapse; background: #fff; }
+.sub-table th, .sub-table td { border: 1px solid var(--border); padding: 6px 8px; font-size: 12px; text-align: left; }
+.pending-reason { margin: 0 0 4px; font-size: 12px; }
+.muted-text { color: var(--muted); font-size: 12px; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
